@@ -1,0 +1,14 @@
+{
+    "name": "pepper-digital/packages",
+    "description": "Private Composer repository for Pepper Digital Craft CMS plugins",
+    "homepage": "https://pepper-digital.github.io/packages",
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/pepper-digital/babbage" },
+        { "type": "vcs", "url": "https://github.com/pepper-digital/berners" },
+        { "type": "vcs", "url": "https://github.com/pepper-digital/brunel" },
+        { "type": "vcs", "url": "https://github.com/pepper-digital/hopper" },
+        { "type": "vcs", "url": "https://github.com/pepper-digital/magellan" },
+        { "type": "vcs", "url": "https://github.com/pepper-digital/turing" }
+    ],
+    "require-all": true
+}
