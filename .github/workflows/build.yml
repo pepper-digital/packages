@@ -32,6 +32,7 @@ jobs:
         run: |
           composer global config minimum-stability dev
           composer global config prefer-stable true
+          composer global config --no-plugins allow-plugins.composer/satis true
           composer global require composer/satis --no-interaction --quiet
 
       - name: Build Satis
