@@ -29,7 +29,7 @@ jobs:
           php-version: '8.2'
 
       - name: Install Satis
-        run: composer global require composer/satis:^2.0 --no-interaction --quiet
+        run: composer global require composer/satis:@dev --no-interaction --quiet --stability=dev
 
       - name: Build Satis
         env:
