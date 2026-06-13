@@ -8,6 +8,7 @@
         { "type": "vcs", "url": "https://github.com/pepper-digital/brunel" },
         { "type": "vcs", "url": "https://github.com/pepper-digital/hopper" },
         { "type": "vcs", "url": "https://github.com/pepper-digital/magellan" },
+        { "type": "vcs", "url": "https://github.com/pepper-digital/nightingale" },
         { "type": "vcs", "url": "https://github.com/pepper-digital/turing" }
     ],
     "require-all": true
