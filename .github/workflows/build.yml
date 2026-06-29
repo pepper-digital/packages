@@ -38,7 +38,17 @@ jobs:
       - name: Build Satis
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-        run: $(composer global config bin-dir --absolute)/satis build satis.json public/
+          # Throttle parallel API calls so GitHub's anti-scraping limit doesn't trip
+          COMPOSER_MAX_PARALLEL_HTTP: 2
+        run: |
+          # Retry with backoff — GitHub's secondary rate limit is transient
+          satis="$(composer global config bin-dir --absolute)/satis"
+          for i in 1 2 3; do
+            "$satis" build satis.json public/ && exit 0
+            echo "Attempt $i failed (likely GitHub API throttle), backing off..."
+            sleep 60
+          done
+          echo "All attempts failed."; exit 1
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
